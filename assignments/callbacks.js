@@ -71,19 +71,23 @@ function contains(item, list, cb) {
   let isTrue = list.find((fItem) => {
     return fItem === item
   });
-  cb(isTrue);
+
+  if (isTrue !== undefined) {
+    isTrue ="true";
+  } else {
+    isTrue = "false";
+  }
+  return cb(isTrue);
 }
 
 
-contains("Gumasdsad", items, (el) => {
-  if (el === true) {
-    console.log("Item found: true");
-  } else {
-    console.log("Item found: false");
-  }
+contains("Gum", items, (el) => {
+  console.log("when item in array is found: " + el);
 });
 
-
+contains("Gumasdasdasd", items, (el) => {
+  console.log("when item in array is not found: " + el);
+});
 
 
 
