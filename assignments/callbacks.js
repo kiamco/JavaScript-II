@@ -73,7 +73,7 @@ function contains(item, list, cb) {
   });
 
   if (isTrue !== undefined) {
-    isTrue ="true";
+    isTrue = "true";
   } else {
     isTrue = "false";
   }
